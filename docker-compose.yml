@@ -1,0 +1,14 @@
+name: word-bot
+
+volumes:
+  data:
+
+services:
+  word-bot:
+    build:
+      dockerfile: ./bot.Dockerfile
+    image: word-bot
+    network_mode: "host"
+    restart: unless-stopped
+    volumes:
+      - data:/usr/src/app/data
